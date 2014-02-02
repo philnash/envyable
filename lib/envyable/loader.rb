@@ -29,12 +29,21 @@ module Envyable
     #
     # Returns nothing.
     def load(environment='development')
-      yml = File.expand_path(@path)
-      if File.exists? yml
-        Array(YAML.load_file(yml)[environment]).each do |key,value|
-          @loadable[key.to_s] = value.to_s
-        end
+      if @yml ||= load_yml
+        @yml[environment].each { |key, value| set_value(key, value) }
       end
+    end
+
+    private
+
+    def load_yml
+      yml_path = File.expand_path(@path)
+      return nil unless File.exists?(yml_path)
+      YAML.load_file(yml_path)
+    end
+
+    def set_value(key, value)
+      @loadable[key.to_s] = value.to_s
     end
   end
 end
