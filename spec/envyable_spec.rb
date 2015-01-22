@@ -15,5 +15,9 @@ describe Envyable do
     it 'should not fail if file is not there' do
       Envyable.load 'spec/fixtures/nothing.yml'
     end
+
+    it 'should not fail if the environment is not represented in the file' do
+      Envyable.load 'spec/fixtures/env.yml', 'production'
+    end
   end
 end
