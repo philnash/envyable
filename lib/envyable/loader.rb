@@ -30,6 +30,7 @@ module Envyable
     # Returns nothing.
     def load(environment='development')
       if @yml ||= load_yml
+        return unless @yml[environment]
         @yml[environment].each { |key, value| set_value(key, value) }
       end
     end
