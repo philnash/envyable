@@ -58,4 +58,36 @@ describe Envyable::Loader do
       end
     end
   end
+
+  describe 'initialized with a path to an env with default values and a loadable hash' do
+    before do
+      @loadable = {}
+      @loader = Envyable::Loader.new('spec/fixtures/default_env.yml', @loadable)
+    end
+
+    describe 'loading the default development environment' do
+      before { @loader.load }
+
+      it 'should load default values into the loadable' do
+        @loadable['CHUNKY'].must_equal 'bacon'
+        @loadable['NUMBER'].must_equal '3'
+      end
+
+      it 'should not load a key for environment specific values' do
+        @loadable['staging'].must_be_nil
+      end
+    end
+
+    describe 'loading the staging environment' do
+      before { @loader.load('staging') }
+
+      it 'should overwrite the default values' do
+        @loadable['CHUNKY'].must_equal 'foxes'
+      end
+
+      it 'should still load the other default values' do
+        @loadable['NUMBER'].must_equal '3'
+      end
+    end
+  end
 end

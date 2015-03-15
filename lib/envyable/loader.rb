@@ -30,8 +30,10 @@ module Envyable
     # Returns nothing.
     def load(environment='development')
       if @yml ||= load_yml
-        return unless @yml[environment]
-        @yml[environment].each { |key, value| set_value(key, value) }
+        @yml.each { |key, value| set_value(key, value) }
+        if @yml[environment]
+          @yml[environment].each { |key, value| set_value(key, value) }
+        end
       end
     end
 
@@ -44,7 +46,7 @@ module Envyable
     end
 
     def set_value(key, value)
-      @loadable[key.to_s] = value.to_s
+      @loadable[key.to_s] = value.to_s unless value.is_a?(Hash)
     end
   end
 end
