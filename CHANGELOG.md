@@ -1,5 +1,9 @@
 # ChangeLog
 
+### 0.2.0 - Unreleased
+
+* Allows user to add default values and then override on an environment by environment basis
+
 ### 0.1.0 - 2015/01/22
 
 * Stops the loader from choking on a file if the environment requested is not present

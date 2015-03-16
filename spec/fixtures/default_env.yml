@@ -1,0 +1,5 @@
+CHUNKY: 'bacon'
+NUMBER: 3
+
+staging:
+  CHUNKY: 'foxes'
