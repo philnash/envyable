@@ -1,6 +1,6 @@
 # ChangeLog
 
-## 0.2.0 / Unreleased
+## 0.2.0 / 2015-03-16
 
 * [FEATURE] Allows user to add default values and then override on an environment by environment basis
 * [ENHANCEMENT] Uses `Pathname#join` to form file name in Railtie
