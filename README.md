@@ -41,8 +41,9 @@ You can create your yaml file anywhere (though why not `config/env.yml`?). To lo
 Envyable.load('path/to/yml', environment)
 ```
 
-The default environment is development if you leave that argument blank.  For example, if your variables are in a config folder in a file called env.yml, and you want to load development only, run from IRB:
+The default environment is development if you leave that argument blank.  For example, if your variables are in a config folder in a file called env.yml, and you want to load development only, include in your script:
 ```
+require 'envyable'
 Envyable.load('config/env.yml')
 ```
 
