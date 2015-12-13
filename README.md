@@ -36,7 +36,16 @@ Once installed in a Rails app, add your yaml file at `config/env.yml`. The gem w
 
 ### Other applications
 
-You can create your yaml file anywhere (though why not `config/env.yml`?). Then call `Envyable.load('path/to/yml', environment)` and the yaml file will be loaded into `ENV`.
+You can create your yaml file anywhere (though why not `config/env.yml`?). To load your yaml file into `ENV`, call:
+```
+Envyable.load('path/to/yml', environment)
+```
+
+The default environment is development if you leave that argument blank.  For example, if your variables are in a config folder in a file called env.yml, and you want to load development only, include in your script:
+```
+require 'envyable'
+Envyable.load('config/env.yml')
+```
 
 ### Version control
 
