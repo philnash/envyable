@@ -36,9 +36,9 @@ Once installed in a Rails app, add your yaml file at `config/env.yml`. The gem w
 
 ### Load Immediately
 
-If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/load-now`:
+If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/rails-now`:
 ```
-gem 'envyable', require: 'envyable/load-now'
+gem 'envyable', require: 'envyable/rails-now'
 gem 'other-gem-that-requires-env-variables'
 ```
 
