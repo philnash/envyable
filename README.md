@@ -34,9 +34,17 @@ test:
 
 Once installed in a Rails app, add your yaml file at `config/env.yml`. The gem will load the correct environment on initialization of the application.
 
+### Load Immediately
+
+If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/load-now`:
+```
+gem 'envyable', require: 'envyable/load-now'
+gem 'other-gem-that-requires-env-variables'
+```
+
 ### Other applications
 
-You can create your yaml file anywhere (though why not `config/env.yml`?). To load your yaml file into `ENV`, call:
+With the exception of loading Envyable immediately via the Gemfile, you can create your yaml file anywhere (though why not `config/env.yml`?). To load your yaml file into `ENV`, call:
 ```
 Envyable.load('path/to/yml', environment)
 ```
