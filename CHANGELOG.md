@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.0.0 / 2016-01-24
+
+* [FEATURE] If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/rails-now`. Thanks to @mikelkew.
+
 ## 0.2.0 / 2015-03-16
 
 * [FEATURE] Allows user to add default values and then override on an environment by environment basis
