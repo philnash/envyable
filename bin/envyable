@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require "thor"
+
+require "./lib/envyable/cli"
+
+Envyable::CLI.start
