@@ -18,6 +18,25 @@ Or install it yourself as:
 
     $ gem install envyable
 
+### Install task
+
+Once the gem is included in your project, you can then use it to generate the
+default required files. Just run:
+
+```
+$ envyable install
+```
+
+and you will get a `config` directory containing an `env.yml` and a
+`env.yml.example` file. If you have a `.gitignore` file this will also append
+the line
+
+```yaml
+/config/env.yml
+```
+
+to your config so that you do not check in `/config/env.yml`.
+
 ## Usage
 
 ### YAML file
