@@ -2,7 +2,7 @@
 
 The simplest yaml to ENV config loader.
 
-[![Build Status](https://travis-ci.org/philnash/envyable.png?branch=master)](https://travis-ci.org/philnash/envyable)
+[![Build Status](https://travis-ci.org/philnash/envyable.svg?branch=master)](https://travis-ci.org/philnash/envyable)
 
 ## Installation
 
