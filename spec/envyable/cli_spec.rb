@@ -34,9 +34,9 @@ describe Envyable::CLI do
       gitignore = "#{cli.destination_root}/.gitignore"
       cli = Envyable::CLI.new([], {}, :destination_root => destination_root(:with_gitignore => true))
       File.exists?(gitignore).must_equal true
-      File.readlines(gitignore).none? { |line| line == "config/env.yml" }
+      File.readlines(gitignore).none? { |line| line == "config/env.yml" }.must_equal true
       capture_io { cli.install }
-      File.readlines(gitignore).any? { |line| line == "config/env.yml" }
+      File.readlines(gitignore).any? { |line|  line == "config/env.yml" }.must_equal true
     end
   end
 end

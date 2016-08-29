@@ -10,7 +10,7 @@ module Envyable
     def install
       create_file("config/env.yml")
       create_file("config/env.yml.example")
-      if File.exists?("#{destination_root}.gitignore")
+      if File.exists?("#{destination_root}/.gitignore")
         append_to_file(".gitignore") do
           "\n# Don't check in credentials \nconfig/env.yml"
         end
