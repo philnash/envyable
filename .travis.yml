@@ -7,3 +7,5 @@ rvm:
   - jruby-19mode
   - rbx
 before_install: gem install bundler
+sudo: required
+dist: trusty
