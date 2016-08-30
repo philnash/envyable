@@ -5,7 +5,10 @@ rvm:
   - 2.2.0
   - 2.3.0
   - jruby-19mode
-  - rbx
+  - rbx-3.56
 before_install: gem install bundler
 sudo: required
 dist: trusty
+matrix:
+  allow_failures:
+  - rvm: rbx
