@@ -7,8 +7,6 @@ rvm:
   - jruby-19mode
   - rbx-3.56
 before_install: gem install bundler
-sudo: required
-dist: trusty
 matrix:
   allow_failures:
   - rvm: rbx-3.56
