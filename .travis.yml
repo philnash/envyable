@@ -11,4 +11,4 @@ sudo: required
 dist: trusty
 matrix:
   allow_failures:
-  - rvm: rbx
+  - rvm: rbx-3.56
