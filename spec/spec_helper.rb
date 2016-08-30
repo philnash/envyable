@@ -8,6 +8,7 @@ begin
       SimpleCov::Formatter::HTMLFormatter,
       CodeClimate::TestReporter::Formatter
     ])
+    add_filter "/spec/"
   end
 rescue LoadError
 end
