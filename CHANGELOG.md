@@ -1,5 +1,11 @@
 # ChangeLog
 
+## 1.1.0 / 2016-08-31
+
+* [FEATURE] New envyable executable with a single command: `envyable install`. Will setup a good default for envyable, including `config/env.yml` and `config/env.yml.example` files and gitignoring the `config/env.yml` file.
+* [ENHANCEMENT] Adds code coverage report
+* [ENHANCEMENT] Adds Code Climate score and coverage report badges to README
+
 ## 1.0.0 / 2016-01-24
 
 * [FEATURE] If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/rails-now`. Thanks to @mikelkew.
