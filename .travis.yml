@@ -1,12 +1,14 @@
 language: ruby
+sudo: required
+dist: trusty
 rvm:
   - 2.0.0
   - 2.1.10
   - 2.2.5
   - 2.3.1
   - jruby-19mode
-  - rbx-3.56
+  - rbx-3.57
 before_install: gem install bundler
 matrix:
   allow_failures:
-  - rvm: rbx-3.56
+  - rvm: rbx-3.57
