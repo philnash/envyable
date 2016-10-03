@@ -12,3 +12,7 @@ before_install: gem install bundler
 matrix:
   allow_failures:
   - rvm: rbx-3.57
+addons:
+  apt:
+    packages:
+      - haveged
