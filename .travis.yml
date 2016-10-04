@@ -7,11 +7,11 @@ rvm:
   - 2.2.5
   - 2.3.1
   - jruby-19mode
-  - rbx-3.57
+  - rbx
 before_install: gem install bundler
 matrix:
   allow_failures:
-  - rvm: rbx-3.57
+  - rvm: rbx
 addons:
   apt:
     packages:
