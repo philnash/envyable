@@ -41,7 +41,7 @@ module Envyable
 
     def load_yml
       yml_path = File.expand_path(@path)
-      return nil unless File.exists?(yml_path)
+      return nil unless File.exist?(yml_path)
       YAML.load_file(yml_path)
     end
 
