@@ -20,7 +20,7 @@ module Envyable
   #   Envyable.load('config/application.yml', 'production')
   #
   # Returns nothing.
-  def self.load(path, environment='development')
+  def self.load(path, environment = 'development')
     Loader.new(path).load(environment)
   end
 end

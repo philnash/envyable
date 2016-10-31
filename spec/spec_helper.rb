@@ -11,6 +11,8 @@ begin
     add_filter "/spec/"
   end
 rescue LoadError
+  puts "Couldn't load simplecov or codeclimate-test-reporter. Check your " \
+       "dependencies."
 end
 
 gem 'minitest'

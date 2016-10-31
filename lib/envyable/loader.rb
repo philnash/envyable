@@ -13,7 +13,7 @@ module Envyable
     #             resides.
     # loadable  - a Hash or hashlike structure that the yaml file variables
     #             should be loaded into (default: ENV).
-    def initialize(path, loadable=ENV)
+    def initialize(path, loadable = ENV)
       @path = path
       @loadable = loadable
     end
@@ -28,7 +28,7 @@ module Envyable
     # load('production')
     #
     # Returns nothing.
-    def load(environment='development')
+    def load(environment = 'development')
       if @yml ||= load_yml
         @yml.each { |key, value| set_value(key, value) }
         if @yml[environment]
