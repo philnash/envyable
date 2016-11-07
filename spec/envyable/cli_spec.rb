@@ -41,22 +41,25 @@ describe Envyable::CLI do
 
     it "should create a file in config/spring.rb if it doesn't exist already" do
       spring_rb = "#{cli.destination_root}/config/spring.rb"
-      spring_bin = "#{cli.destination_root}/bin/spring"
-      unless File.exist?(spring_rb) || !File.exist?(spring_bin)
-        File.exist?(spring_rb).must_equal false
-        capture_io { cli.install }
-        File.exist?(spring_rb).must_equal true
-      end
+      cli = Envyable::CLI.new([], {}, :destination_root => destination_root(:with_spring_bin => true))
+      File.exist?(spring_rb).must_equal false
+      capture_io { cli.install }
+      File.exist?(spring_rb).must_equal true
     end
 
     it "should add config/env.yml to Spring's watch list" do
       spring_rb = "#{cli.destination_root}/config/spring.rb"
-      spring_bin = "#{cli.destination_root}/bin/spring"
-      unless File.exist?(spring_rb) || !File.exist?(spring_bin)
-        File.readlines(spring_rb).none? { |line| line == "Spring.watch 'config/env.yml'" }.must_equal true
-        capture_io { cli.install }
-        File.readlines(spring_rb).any? { |line| line == "Spring.watch 'config/env.yml'" }.must_equal true
-      end
+      cli = Envyable::CLI.new([], {}, :destination_root => destination_root(:with_spring_bin => true))
+      capture_io { cli.install }
+      File.readlines(spring_rb).any? { |line| line == "Spring.watch 'config/env.yml'" }.must_equal true
+    end
+
+    it "should add config/env.yml to Spring's watch list when spring.rb exists" do
+      spring_rb = "#{cli.destination_root}/config/spring.rb"
+      cli = Envyable::CLI.new([], {}, :destination_root => destination_root(:with_spring_bin => true, :with_spring_rb => true))
+      File.readlines(spring_rb).none? { |line| line == "Spring.watch 'config/env.yml'" }.must_equal true
+      capture_io { cli.install }
+      File.readlines(spring_rb).any? { |line| line == "Spring.watch 'config/env.yml'" }.must_equal true
     end
   end
 end

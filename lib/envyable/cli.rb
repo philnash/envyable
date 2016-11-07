@@ -18,7 +18,7 @@ module Envyable
       if File.exist?("#{destination_root}/bin/spring")
         create_file("config/spring.rb") unless File.exist?("#{destination_root}/config/spring.rb")
         append_to_file("config/spring.rb") do
-          "Spring.watch 'config/env.yml'"
+          "\nSpring.watch 'config/env.yml'"
         end
       end
     end
