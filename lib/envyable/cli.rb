@@ -15,6 +15,12 @@ module Envyable
           "\n# Don't check in credentials \nconfig/env.yml"
         end
       end
+      if File.exist?("#{destination_root}/bin/spring")
+        create_file("config/spring.rb") unless File.exist?("#{destination_root}/config/spring.rb")
+        append_to_file("config/spring.rb") do
+          "Spring.watch 'config/env.yml'"
+        end
+      end
     end
   end
 end
