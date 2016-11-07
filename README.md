@@ -23,12 +23,10 @@ Or install it yourself as:
 Once the gem is included in your project, you can then use it to generate the
 default required files. Just run:
 
-```
-$ envyable install
-```
+    $ envyable install
 
 and you will get a `config` directory containing an `env.yml` and a
-`env.yml.example` file. If you have a `.gitignore` file, this will also append
+`env.yml.example` file. If you have a `.gitignore` file this will also append
 the line:
 
 ```yaml
@@ -38,14 +36,13 @@ the line:
 to your config so that you do not check in `/config/env.yml`.
 
 If you have [Spring](https://github.com/rails/spring) bundled with your
-application, this will append the following line to `/config/spring.rb`:
+application this will append the following line to `/config/spring.rb`:
 
 ```ruby
 Spring.watch 'config/env.yml'
 ```
 
 If the file `/config/spring.rb` does not exist, it will be created.
-
 
 ## Usage
 
@@ -61,11 +58,11 @@ test:
 
 ### Rails
 
-Once installed in a Rails app, add your yaml file at `config/env.yml`. The gem will load the correct environment on initialization of the application.
+Once installed in a Rails app, add your yaml file at `config/env.yml`. The gem will load the correct environment on initialization of the application. If you are using Spring to load your Rails application, [add `config/env.yml` to Spring's watch list](https://github.com/rails/spring#watching-files-and-directories).
 
 ### Load Immediately
 
-If you have gems that require variables to be set earlier, then place `envyable` in the `Gemfile` before those gems and require `envyable/rails-now`:
+If you have gems that require variables to be set earlier then place `envyable` in the `Gemfile` before those gems and require `envyable/rails-now`:
 ```
 gem 'envyable', require: 'envyable/rails-now'
 gem 'other-gem-that-requires-env-variables'
@@ -86,11 +83,11 @@ Envyable.load('config/env.yml')
 
 ### Version control
 
-It is not recommended that you check the yaml file in to version control. Personally, I like to check in a `env.yml.example` file that shows the required keys, but does not include any credentials.
+It is not recommended that you check the yaml file in to version control. Personally, I like to check in a `env.yml.example` file that shows the required keys, but does not include any credentials. If you generate your Envyable files using the installer, `config/env.yml` will be added to your `.gitignore` file.
 
 ## Troubleshooting
 
-If your ENV values don't update when you modify `config/env.yml`, verify if you have Spring (or another application preloader) that isn't configured to watch and reload when you update values.  You should try configuring the preloader or just restarting it.
+If your ENV values don't update when you modify `config/env.yml`, verify whether you have Spring (or another application preloader) that isn't configured to watch and reload when you update values.  You should try configuring the preloader or just restarting it.
 
 ## Contributing
 
