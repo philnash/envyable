@@ -6,7 +6,7 @@ describe Envyable::CLI do
     ::FileUtils.rm_rf(destination_root)
   end
 
-  let(:cli) { Envyable::CLI.new([], {}, :destination_root => destination_root) }
+  let(:cli) { Envyable::CLI.new([], {}, destination_root: destination_root) }
 
   describe 'install' do
     it 'should create a file in config/env.yml' do

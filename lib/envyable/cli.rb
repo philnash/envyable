@@ -1,6 +1,8 @@
 require 'thor'
 
 module Envyable
+  # Internal: class that runs the command line interface. This is loaded in
+  # bin/cli and the actions are provided by Thor.
   class CLI < Thor
     include Thor::Actions
 
