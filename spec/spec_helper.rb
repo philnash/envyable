@@ -22,20 +22,16 @@ require 'minitest/autorun'
 
 require File.join(File.dirname(__FILE__), '..', 'lib', 'envyable')
 
-def make_dir_and_create_file(base_dir, dir, file)
-  FileUtils.mkdir_p("#{base_dir}/#{dir}")
-  FileUtils.touch("#{base_dir}/#{dir}/#{file}")
+def make_dir_and_create_file(root, dir, file)
+  FileUtils.mkdir_p("#{root}/#{dir}")
+  FileUtils.touch("#{root}/#{dir}/#{file}")
 end
 
 def destination_root(opts = {})
-  base_dir = File.join(File.dirname(__FILE__), 'sandbox')
-  FileUtils.mkdir_p(base_dir)
-  FileUtils.touch("#{base_dir}/.gitignore") if opts[:with_gitignore]
-  if opts[:with_spring_rb]
-    make_dir_and_create_file(base_dir, "config", "spring.rb")
-  end
-  if opts[:with_spring_bin]
-    make_dir_and_create_file(base_dir, "bin", "spring")
-  end
-  base_dir
+  root = File.join(File.dirname(__FILE__), 'sandbox')
+  FileUtils.mkdir_p(root)
+  FileUtils.touch("#{root}/.gitignore") if opts[:with_gitignore]
+  make_dir_and_create_file(root, "config", "spring.rb") if opts[:with_spring_rb]
+  make_dir_and_create_file(root, "bin", "spring") if opts[:with_spring_bin]
+  root
 end
