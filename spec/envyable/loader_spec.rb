@@ -7,7 +7,7 @@ describe Envyable::Loader do
   end
 
   it 'needs a path to initialize' do
-    lambda { Envyable::Loader.new }.must_raise ArgumentError
+    -> { Envyable::Loader.new }.must_raise ArgumentError
   end
 
   it 'can be loaded with a path, environment and loadable hash' do
