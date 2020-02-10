@@ -2,19 +2,14 @@ require 'fileutils'
 require 'rubygems'
 begin
   require 'simplecov'
-  require 'codeclimate-test-reporter'
   SimpleCov.start do
-    formatter SimpleCov::Formatter::MultiFormatter.new([
-      SimpleCov::Formatter::HTMLFormatter,
-      CodeClimate::TestReporter::Formatter
-    ])
+    formatter SimpleCov::Formatter::HTMLFormatter
     add_filter '/spec/'
   end
 rescue LoadError
   require 'logger'
   logger = Logger.new('./log/test.log')
-  logger.info 'Couldn\'t load simplecov or codeclimate-test-reporter. Check ' \
-              'your dependencies.'
+  logger.info "Couldn't load simplecov. Check your dependencies."
 end
 
 gem 'minitest'
