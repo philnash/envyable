@@ -4,12 +4,12 @@ describe Envyable do
   describe '.load' do
     it 'should load a yml settings file' do
       Envyable.load 'spec/fixtures/env.yml'
-      ENV['CHUNKY'].must_equal 'bacon'
+      expect(ENV['CHUNKY']).must_equal 'bacon'
     end
 
     it 'should take an optional environment argument' do
       Envyable.load 'spec/fixtures/env.yml', 'staging'
-      ENV['CHUNKY'].must_equal 'foxes'
+      expect(ENV['CHUNKY']).must_equal 'foxes'
     end
 
     it 'should not fail if file is not there' do
