@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('../../spec_helper', __FILE__)
 require File.expand_path('../../../lib/envyable/cli', __FILE__)
 

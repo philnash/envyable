@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Envyable
   # Internal: Loads yaml files into ENV (or a supplied hash).
   class Loader
