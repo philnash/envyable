@@ -2,7 +2,7 @@
 
 The simplest yaml to ENV config loader.
 
-[![Build Status](https://travis-ci.org/philnash/envyable.svg?branch=master)](https://travis-ci.org/philnash/envyable) [![Code Climate](https://codeclimate.com/github/philnash/envyable/badges/gpa.svg)](https://codeclimate.com/github/philnash/envyable)
+[![Gem version](https://badge.fury.io/rb/envyable.svg)](https://rubygems.org/gems/envyable) ![Build Status](https://github.com/philnash/envyable/workflows/tests/badge.svg) [![Code Climate](https://codeclimate.com/github/philnash/envyable/badges/gpa.svg)](https://codeclimate.com/github/philnash/envyable)
 
 ## Installation
 
